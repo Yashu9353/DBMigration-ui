@@ -1,4 +1,5 @@
-import { useState, useContext } from "react";
+import { useState} from "react";
+// import { useContext } from "react";
 import {
   Header as CarbonHeader,
   HeaderGlobalAction,
@@ -6,8 +7,9 @@ import {
   HeaderName,
   HeaderGlobalBar,
 } from "@carbon/react";
+//import { LogOut } from "lucide-react";
+//import { AuthContext } from "../../App";
 import { LogOut } from "lucide-react";
-import { AuthContext } from "../../App";
 import { useNavigate } from "react-router-dom";
 import IBMLogo from "../icons/IBMLogo";
 
@@ -17,13 +19,13 @@ type HeaderProps = {
 };
 
 const Header = ({ toggleSidebar, sidebarOpen }: HeaderProps) => {
-  const { logout } = useContext(AuthContext);
+  // const { logout } = useContext(AuthContext);
   const navigate = useNavigate();
 
-  const handleLogout = () => {
-    logout();
-    navigate("/login");
-  };
+  //const handleLogout = () => {
+    //logout();
+    //navigate("/login");
+  //};
 
   return (
     <CarbonHeader aria-label="IBM AI Database Migration">
@@ -42,7 +44,7 @@ const Header = ({ toggleSidebar, sidebarOpen }: HeaderProps) => {
 
       {/* Removed HeaderNavigation and Questionnaires menu */}
 
-      <HeaderGlobalBar>
+      {/* <HeaderGlobalBar>
         <HeaderGlobalAction
           aria-label="Log out"
           onClick={handleLogout}
@@ -50,7 +52,7 @@ const Header = ({ toggleSidebar, sidebarOpen }: HeaderProps) => {
         >
           <LogOut size={20} />
         </HeaderGlobalAction>
-      </HeaderGlobalBar>
+      </HeaderGlobalBar> */}
     </CarbonHeader>
   );
 };
